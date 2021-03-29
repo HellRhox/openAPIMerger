@@ -45,7 +45,7 @@ def merge_paths(main, branch):
         if args.pathextension + branch_path in main["paths"]:
             main["paths"][args.pathextension + branch_path].update(branch["paths"][branch_path])
         else:
-            main["paths"][args.pathextension + branch_path]=branch["paths"][branch_path]
+            main["paths"][args.pathextension + branch_path] = branch["paths"][branch_path]
 
     return main["paths"]
 
@@ -56,7 +56,10 @@ def merge_schema(main, branch):
 
 
 def merge_responses(main, branch):
-    main["components"]["responses"].update(branch["components"]["responses"])
+    if "responses" in main["components"]:
+        main["components"]["responses"].update(branch["components"]["responses"])
+    else:
+        main["components"]["responses"] = branch["components"]["responses"]
     return main["components"]["responses"]
 
 
