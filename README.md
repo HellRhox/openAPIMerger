@@ -1,5 +1,5 @@
 # openApiMerger
-##Info
+## Info
 This project merges two openapi  specs together and  updates/overrides.
 It can read yaml or json files.
 ##Usage
